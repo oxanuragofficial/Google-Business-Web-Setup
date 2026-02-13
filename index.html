@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>Google Business Web Setup | Affordable GBP Websites</title>
+  <title>Bharat Webstudio | Affordable GBP Websites</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Font: Inter + Outfit for modern look -->
@@ -105,20 +105,32 @@
       gap: 10px;
     }
 
-    .logo i {
-      font-size: 2rem;
-      color: #1a73e8;
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      box-shadow: 0 8px 16px -4px rgba(26,115,232,0.3);
     }
 
     .logo-text {
       font-weight: 800;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
       background: linear-gradient(145deg, #0a2a44, #133e5e);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .logo-text span {
       background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -355,7 +367,7 @@
     }
 
     .footer-links li {
-      margin-bottom: 16px;
+      margin-bottom: 16px; 
     }
 
     .footer-links a {
@@ -366,6 +378,8 @@
       gap: 10px;
       transition: color 0.2s;
     }
+
+
 
     .footer-links a:hover {
       color: #1a73e8;
@@ -443,6 +457,21 @@
       padding: 24px;
       color: #0a1e2f;
     }
+
+    /* logo design enhancements */
+    .brand-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon i {
+      font-size: 1.4rem;
+      color: white;
+    }
+    footer .logo-icon {
+      width: 38px;
+      height: 38px;
+      font-size: 1.4rem;
+    }
   </style>
 </head>
 <body>
@@ -456,8 +485,10 @@
 <div class="container">
   <nav class="navbar">
     <div class="logo">
-      <i class="fas fa-bolt"></i>
-      <div class="logo-text"><span>GB</span> WebSetup</div>
+      <div class="logo-icon">
+        <i class="fas fa-bolt"></i>
+      </div>
+      <div class="logo-text">Bharat<span>Webstudio</span></div>
     </div>
     <div class="hamburger" id="hamburger-icon">
       <i class="fas fa-bars"></i>
@@ -645,8 +676,10 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo" style="margin-bottom: 20px;">
-          <i class="fas fa-bolt" style="color: #1a73e8;"></i>
-          <span style="font-weight: 800; font-size: 1.5rem;">GB WebSetup</span>
+          <div class="logo-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <span style="font-weight: 800; font-size: 1.5rem; margin-left: 8px;">Bharat Webstudio</span>
         </div>
         <p style="color: #2d4e68; margin-bottom: 24px;">We give every local shop a website connected to Google Business. One-time cost, GitHub hosted, no monthly fees.</p>
         <div style="display: flex; gap: 16px;">
@@ -689,7 +722,7 @@
       </div>
     </div>
     <div class="copyright">
-      <p>© 2025 Google Business Web Setup. All rights reserved. Google Business Profile is a trademark of Google LLC. <br>Email: goglebusinesswebstore@gmail.com | WhatsApp: +91 8888 555555 | GitHub hosted — ₹0 monthly maintenance</p>
+      <p>© 2025 Bharat Webstudio. All rights reserved. Google Business Profile is a trademark of Google LLC. <br>Email: goglebusinesswebstore@gmail.com | WhatsApp: +91 7485989859 | GitHub hosted — ₹0 monthly maintenance</p>
       <p style="margin-top: 10px;"><i class="fas fa-check-circle" style="color: #1a73e8;"></i> Permanent website with one-time payment. No recurring fees.</p>
     </div>
   </div>
@@ -711,12 +744,4 @@
       const target = document.querySelector(this.getAttribute('href'));
       if(target) target.scrollIntoView({ behavior: 'smooth' });
       if (window.innerWidth <= 768) {
-        navLinks.classList.remove('active');
-      }
-    });
-  });
-</script>
-
-<!-- note: all functions working - whatsapp, email, rupee pricing, github hosting message, permanent website -->
-</body>
-</html>
+        navLinks.classList

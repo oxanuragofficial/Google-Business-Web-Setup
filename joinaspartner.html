@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Partner Program | Google Business Web Setup</title>
+  <title>Partner Program | Bharat Webstudio</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Font: Outfit (clean, modern) -->
@@ -41,22 +41,37 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .logo i {
-      font-size: 2rem;
-      color: #1a73e8;
-      filter: drop-shadow(0 0 10px rgba(26,115,232,0.3));
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      box-shadow: 0 8px 18px -4px rgba(26,115,232,0.5);
     }
 
-    .logo span {
+    .logo-icon i {
+      font-size: 1.5rem;
+      color: white;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    }
+
+    .logo-text {
       font-weight: 800;
       font-size: 1.5rem;
       color: white;
+      letter-spacing: -0.02em;
     }
 
-    .logo span span {
+    .logo-text span {
       color: #1a73e8;
     }
 
@@ -417,8 +432,10 @@
   <div class="container">
     <div class="nav-minimal">
       <div class="logo">
-        <i class="fas fa-bolt"></i>
-        <span><span>GB</span> WebSetup</span>
+        <div class="logo-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="logo-text">Bharat<span>Webstudio</span></div>
       </div>
       <a href="index.html" class="btn-outline-light"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
@@ -528,7 +545,7 @@
       </div>
       <div class="testimonial-card gold">
         <i class="fas fa-quote-left"></i>
-        <p>"My agency now offers websites through GB WebSetup. I don't build sites myself. Bulk pricing saves me ₹1,500 per client. My profit margin increased."</p>
+        <p>"My agency now offers websites through Bharat Webstudio. I don't build sites myself. Bulk pricing saves me ₹1,500 per client. My profit margin increased."</p>
         <div class="testimonial-author">
           <i class="fas fa-user-circle"></i>
           <div>
@@ -621,8 +638,10 @@
     <div class="container">
       <div class="footer-content">
         <div class="logo">
-          <i class="fas fa-bolt" style="color: #1a73e8;"></i>
-          <span style="color: white; font-weight: 600;">GB WebSetup — Partner Program</span>
+          <div class="logo-icon" style="width: 38px; height: 38px;">
+            <i class="fas fa-bolt" style="font-size: 1.2rem;"></i>
+          </div>
+          <span style="color: white; font-weight: 600; margin-left: 8px;">Bharat Webstudio — Partner Program</span>
         </div>
         <div>© 2025 • Earn with us • One-time payments</div>
       </div>
