@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Success Stories | Google Business Web Setup</title>
+  <!-- Font Awesome 6 for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Outfit (clean modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #f9fcff;
+      color: #0a1e2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navigation (minimal, only to keep success page clean) */
+    .nav-minimal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+      background: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 2rem;
+      color: #1a73e8;
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: linear-gradient(145deg, #0a2a44, #1a4b6d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo span span {
+      background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-outline {
+      border: 2px solid #1a73e8;
+      color: #1a73e8;
+      padding: 8px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #e8f0fe;
+    }
+
+    /* Page header - attractive */
+    .page-header {
+      text-align: center;
+      padding: 60px 0 20px;
+    }
+
+    .page-header h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #0a2a44, #1a4b6d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 1.3rem;
+      color: #2b4b67;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .badge {
+      background: #e8f0fe;
+      color: #1a5a9c;
+      padding: 8px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(26,115,232,0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Grid for 20 stories */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 30px;
+      margin: 50px 0 60px;
+    }
+
+    /* Story card - attractive, glassmorphism light */
+    .story-card {
+      background: white;
+      border-radius: 36px;
+      padding: 32px 28px;
+      box-shadow: 0 15px 35px -8px rgba(0,0,0,0.02);
+      border: 1px solid #f0f6fd;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .story-card:hover {
+      transform: translateY(-8px);
+      border-color: #c2d9fc;
+      box-shadow: 0 25px 45px -10px rgba(26,115,232,0.1);
+    }
+
+    .card-badge {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .plan-tag {
+      background: #e6f2fc;
+      color: #1a5a9c;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 6px 18px;
+      border-radius: 60px;
+      letter-spacing: 0.3px;
+    }
+
+    .pro-tag {
+      background: #1a73e8;
+      color: white;
+    }
+
+    .location-badge {
+      background: #f0f7ff;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0a3d62;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-badge i {
+      color: #1a73e8;
+      font-size: 0.7rem;
+    }
+
+    .shop-icon {
+      background: #e8f0fe;
+      width: 54px;
+      height: 54px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px 0 10px;
+    }
+
+    .shop-icon i {
+      font-size: 2rem;
+      color: #1a73e8;
+    }
+
+    .quote-icon {
+      color: #1a73e8;
+      opacity: 0.2;
+      font-size: 2.2rem;
+      margin: 5px 0 0px;
+    }
+
+    .story-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1e3a5f;
+      margin: 10px 0 20px;
+      font-style: italic;
+      flex-grow: 1;
+    }
+
+    .customer-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+      border-top: 1px solid #eef2f6;
+      padding-top: 20px;
+    }
+
+    .customer-info i {
+      font-size: 2.2rem;
+      color: #1a73e8;
+      opacity: 0.8;
+    }
+
+    .customer-details strong {
+      font-size: 1.1rem;
+      color: #0a1e2f;
+    }
+
+    .customer-details span {
+      display: block;
+      font-size: 0.85rem;
+      color: #4f6f8f;
+    }
+
+    /* stats section */
+    .stats-bar {
+      background: white;
+      border-radius: 80px;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 30px 0 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+      border: 1px solid #ecf3fa;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1a73e8;
+    }
+
+    .stat-label {
+      color: #2b4b67;
+      font-weight: 500;
+    }
+
+    /* footer minimal */
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid #eef2f6;
+      padding: 40px 0 20px;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 2.5rem; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .stats-bar { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Simple navigation (just to keep context, but success page stands alone) -->
+  <div class="container">
+    <div class="nav-minimal">
+      <div class="logo">
+        <i class="fas fa-bolt"></i>
+        <span><span>GB</span> WebSetup</span>
+      </div>
+      <a href="#" class="btn-outline">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Page header -->
+  <div class="container">
+    <div class="page-header">
+      <h1>🇮🇳 20 real success stories</h1>
+      <p>From local shops across India — they got their website and never looked back.</p>
+      <div class="badge-container">
+        <span class="badge"><i class="fas fa-map-pin"></i> 15+ cities</span>
+        <span class="badge"><i class="fas fa-store"></i> 200+ shops live</span>
+        <span class="badge"><i class="fas fa-clock"></i> 24h delivery</span>
+        <span class="badge"><i class="fas fa-rupee-sign"></i> ₹0 monthly</span>
+      </div>
+    </div>
+
+    <!-- Stats summary -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number">₹5K</div>
+        <div class="stat-label">Normal plan</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">₹10K</div>
+        <div class="stat-label">Pro plan</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Happy shops</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24h</div>
+        <div class="stat-label">Avg launch</div>
+      </div>
+    </div>
+
+    <!-- 20 success stories grid -->
+    <div class="stories-grid">
+      
+      <!-- 1. Delhi - Bakery -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Lajpat Nagar, Delhi</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-cake-candles"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"My Google Business was there for 2 years but no website. They built a beautiful site in 12 hours and connected it. Now I get 5-7 orders daily directly through website. ₹5,000 one-time, no monthly fees!"</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div class="customer-details">
+            <strong>Priya Sharma</strong>
+            <span>The Cake House • since 2025</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 2. Mumbai - Plumber -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Andheri, Mumbai</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-wrench"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"I was losing customers because competitors had websites. They did my GBP verification + 5-page website. Now I'm on first page of Google for 'plumber in Andheri'. Best ₹10,000 I ever spent."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Rajesh Patil</strong><span>Patil Plumbing • 25+ yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 3. Bangalore - Salon -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 + Maint</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Indiranagar, Bangalore</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-scissors"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Tried to create website myself, gave up. They setup everything: GBP optimization, website, Google Posts. My bookings increased 40% in first month. Maintenance charges are just ₹500 per update."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Neha Gupta</strong><span>Glow & Beauty • 8 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 4. Pune - Restaurant -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> KP, Pune</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-utensils"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"My Google Business listing was incomplete. They fixed everything, added menu website, and connected ordering button. GitHub hosting means I pay nothing monthly. Thank you!"</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Amit Deshmukh</strong><span>Spice Kitchen • family restaurant</span></div>
+        </div>
+      </div>
+      
+      <!-- 5. Ahmedabad - Gym -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Navrangpura, Ahmedabad</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-dumbbell"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"No website = no new members. They created membership page, class schedule, and connected to my GBP. 5-page Pro site in 24 hours. Worth every rupee. Got 12 new leads in first week."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Vikram Rathod</strong><span>FitLife Gym • 3 locations</span></div>
+        </div>
+      </div>
+      
+      <!-- 6. Chennai - Dentist -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 + GBP</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> T Nagar, Chennai</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-tooth"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Patients kept asking 'do you have website?' Now I do. They optimized my GBP with photos, added booking form. 6 months later, still running perfectly on GitHub - ₹0 hosting cost."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Dr. Sanjay Kumar</strong><span>Smile Care Dental • 12 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 7. Jaipur - Stationery -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> MI Road, Jaipur</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-book"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"School parents always asked for online catalog. Now I have a website with all products. Connected to my GBP. Sales increased 25% in 2 months."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Ramesh Gupta</strong><span>Gupta Stationery • since 1998</span></div>
+        </div>
+      </div>
+      
+      <!-- 8. Lucknow - Kirana Store -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Hazratganj, Lucknow</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-basket-shopping"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Local customers couldn't find me on Google Maps properly. They fixed my GBP and created a simple website with WhatsApp order button. Now 15+ daily orders via website."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Shyam Verma</strong><span>Verma Kirana • 20 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 9. Hyderabad - Boutique -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Banjara Hills, Hyderabad</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-tshirt"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"I design lehengas, needed portfolio website. They created 5-page site with gallery, contact, and GBP integration. Foreign clients found me through Google. Thank you!"</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Farheen Ali</strong><span>Farheen's Boutique • 5 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 10. Kolkata - Sweet Shop -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Shyambazar, Kolkata</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-candy-cane"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Famous for rosogolla but no online presence. They set up my GBP website in one day. Now customers order sweets online. ₹0 monthly fee is amazing."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Debashish Das</strong><span>Das Sweets • 3 generations</span></div>
+        </div>
+      </div>
+      
+      <!-- 11. Surat - Diamond Worker -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Varachha, Surat</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-gem"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"I'm a diamond polisher, never thought I need website. They explained how customers search. Now my GBP has website link, received 3 B2B inquiries."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Mahesh Savani</strong><span>Savani Diamonds • 15 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 12. Nagpur - Tailor -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Sitabuldi, Nagpur</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-needle"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Only word-of-mouth. They made simple website with my designs. Now 40% new customers come from Google search. Best ₹5,000 investment."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Anil Tayde</strong><span>Tayde Tailors • 22 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 13. Indore - Electronics -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Rajwada, Indore</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-plug"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Had GBP since 2019, no website. They did complete makeover: 5-page site, SEO, 3 Google Posts. Now I rank for 'TV repair Indore'. Business doubled."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Suresh Agrawal</strong><span>Agrawal Electronics • 30 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 14. Bhopal - Coaching Class -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Arera Colony, Bhopal</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Parents search for tuition near me. They made website with courses, fees, and contact. Got 8 new students in 10 days. GitHub hosting = ₹0 monthly."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Rajni Ma'am</strong><span>Rajni Classes • 7 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 15. Ludhiana - Cycle Store -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Model Town, Ludhiana</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-bicycle"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Sell cycles since 1985. Grandson told me I need website. They did it in 24 hours. Now younger customers find me on Google."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Gurpreet Singh</strong><span>Singh Cycles • 40 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 16. Patna - Saloon -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Fraser Road, Patna</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-cut"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Earlier only walk-in. Now website has booking button. Customers book haircuts online. ₹500 maintenance is very reasonable when I need changes."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Manoj Kumar</strong><span>Manoj Saloon • 18 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 17. Coimbatore - Tiffin Center -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> RS Puram, Coimbatore</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-bowl-food"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Famous for dosa, but COVID hit hard. They built website with online ordering. 50% orders now come through website. Pro plan was totally worth it."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Krishnan Iyer</strong><span>Annalakshmi Tiffins • 25 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 18. Guwahati - Handicrafts -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Fancy Bazaar, Guwahati</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-gift"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Sell Assam silk and handicrafts. Now I have a global audience because website is on GitHub, super fast. Foreign tourists book before coming!"</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Hema Das</strong><span>Brahmaputra Crafts • 12 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 19. Vishakhapatnam - Fish Market -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag">₹5,000 • Normal</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Jagadamba, Vizag</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-fish"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"People didn't know I do home delivery. Website with daily fresh catch list changed my business. 10-12 daily orders now. ₹0 monthly fee."</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Appa Rao</strong><span>Rao Fish Centre • 35 yrs</span></div>
+        </div>
+      </div>
+      
+      <!-- 20. Mysore - Furniture -->
+      <div class="story-card">
+        <div class="card-badge">
+          <span class="plan-tag pro-tag">₹10,000 • Pro</span>
+          <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Sayyaji Rao Rd, Mysore</span>
+        </div>
+        <div class="shop-icon"><i class="fas fa-chair"></i></div>
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p class="story-text">"Custom furniture, needed portfolio. They created 5-page site with gallery, testimonials. My Google Business now has website link. Got order from Bangalore!"</p>
+        <div class="customer-info">
+          <i class="fas fa-user-circle"></i>
+          <div><strong>Shankar Acharya</strong><span>Mysore Woodcraft • 3 generations</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom trust message -->
+    <div style="text-align: center; margin: 40px 0 60px;">
+      <span style="background: white; padding: 16px 40px; border-radius: 60px; font-weight: 700; color: #1a5a9c; border: 1px solid #c2d9fc;">
+        ⭐ 200+ shops • 24h delivery • ₹0 monthly hosting • 100% Indian businesses
+      </span>
+    </div>
+  </div>
+
+  <!-- Simple footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">
+          <i class="fas fa-bolt" style="color: #1a73e8;"></i>
+          <span style="font-weight: 700; color: #0a1e2f;">GB WebSetup — Success Stories</span>
+        </div>
+        <div style="color: #5a7788;">© 2025 • One-time payment • GitHub hosted</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

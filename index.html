@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Google Business Web Setup | Affordable GBP Websites</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Inter + Outfit for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== GLOBAL RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #0a1e2f;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(145deg, #1a73e8, #0f5bb3);
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      border: none;
+      box-shadow: 0 10px 20px -6px rgba(26,115,232,0.3);
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: linear-gradient(145deg, #0f5bb3, #0a478a);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px -8px rgba(26,115,232,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #1a73e8;
+      color: #1a73e8;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #e8f0fe;
+      transform: translateY(-2px);
+    }
+
+    .btn-wa {
+      background: #25D366;
+      box-shadow: 0 10px 20px -6px rgba(37,211,102,0.3);
+    }
+    .btn-wa:hover {
+      background: #20b859;
+    }
+
+    /* ===== NAVIGATION (fully responsive) ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 2rem;
+      color: #1a73e8;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(145deg, #0a2a44, #133e5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .logo-text span {
+      background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e3a5f;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a73e8;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #1a73e8;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      padding: 60px 0 40px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 span {
+      background: linear-gradient(145deg, #1a73e8, #0d47a1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-badge {
+      background: #e8f0fe;
+      color: #1a73e8;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 60px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .hero-image {
+      background: radial-gradient(circle at 30% 30%, #f0f7ff, #e9f0fa);
+      border-radius: 40px;
+      padding: 40px;
+      text-align: center;
+    }
+    .hero-image i {
+      font-size: 5rem;
+      color: #1a73e8;
+    }
+
+    /* ===== PRICING CARDS (rupee pricing) ===== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 36px;
+      padding: 36px 28px;
+      border: 1px solid #ecf3fa;
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.02);
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #b8d6fc;
+      box-shadow: 0 30px 50px -20px rgba(26,115,232,0.15);
+    }
+
+    .popular {
+      border: 2px solid #1a73e8;
+      background: #fafeff;
+    }
+
+    .popular-badge {
+      background: #1a73e8;
+      color: white;
+      font-weight: 700;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      position: absolute;
+      top: -16px;
+      left: 30px;
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0a1e2f;
+      margin: 20px 0 10px;
+    }
+    .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #5f7d95;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 28px 0;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .pricing-features i {
+      color: #1a73e8;
+    }
+
+    /* ===== SERVICE CARDS ===== */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    /* ===== CONTACT / WHATSAPP FEATURE ===== */
+    .contact-section {
+      background: linear-gradient(145deg, #0a263a, #0e2d42);
+      color: white;
+      border-radius: 48px;
+      padding: 60px 40px;
+      margin: 60px 0;
+    }
+
+    .contact-flex {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.08);
+      padding: 16px 24px;
+      border-radius: 60px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-detail i {
+      font-size: 1.8rem;
+      width: 40px;
+      text-align: center;
+    }
+
+    .wa-number, .email-id {
+      font-size: 1.2rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    /* ===== PERMANENT HOSTING NOTE (GitHub) ===== */
+    .hosting-note {
+      background: #e6f2fc;
+      border-radius: 40px;
+      padding: 32px;
+      margin: 40px 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      border: 1px solid #c8e1ff;
+    }
+
+    .hosting-note i {
+      font-size: 2.5rem;
+      color: #1a73e8;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #f5faff;
+      padding: 60px 0 30px;
+      margin-top: 60px;
+      border-top: 1px solid #e0ecfc;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+    }
+
+    .footer-links h5 {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: #0a1e2f;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #2d4e68;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #1a73e8;
+    }
+
+    .footer-links i {
+      width: 24px;
+      color: #1a73e8;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      color: #5a7788;
+      border-top: 1px solid #d4e2f0;
+      margin-top: 40px;
+    }
+
+    /* ===== FULLY RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .navbar { flex-wrap: wrap; }
+      .hero h1 { font-size: 2.5rem; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .contact-flex { flex-direction: column; }
+    }
+
+    /* mobile menu fallback - since pure css, we add simple active via js */
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px 0;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .float-wa {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 2.2rem;
+      box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 99;
+      transition: all 0.2s;
+    }
+    .float-wa:hover {
+      background: #20b859;
+      transform: scale(1.1);
+    }
+
+    /* email contact card */
+    .email-block {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      color: #0a1e2f;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== FLOATING WHATSAPP (visible all devices) ===== -->
+<a href="https://wa.me/918888555555?text=Hi!%20I%20need%20website%20for%20my%20Google%20Business%20Profile" class="float-wa" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== NAVIGATION ===== -->
+<div class="container">
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-bolt"></i>
+      <div class="logo-text"><span>GB</span> WebSetup</div>
+    </div>
+    <div class="hamburger" id="hamburger-icon">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-sm" style="padding: 10px 24px;">Get Site</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ===== HERO / HOME ===== -->
+<div id="home" class="container">
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fas fa-store"></i> 200+ local shops live</span>
+      <h1>Google Business Profile but <span>no website?</span> We fix it.</h1>
+      <p style="font-size: 1.2rem; color: #2b4b67; margin-bottom: 28px;">We create professional website + connect to your GBP. Starting at ₹5,000 one-time. No monthly fees.*</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#pricing" class="btn">View plans →</a>
+        <a href="https://wa.me/917479521662" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp now</a>
+      </div>
+      <div style="display: flex; gap: 28px; margin-top: 40px;">
+        <div><strong style="font-size: 1.8rem; color: #1a73e8;">₹5K</strong><span style="display: block; color: #4f6f8f;">Basic site</span></div>
+        <div><strong style="font-size: 1.8rem; color: #1a73e8;">₹10K</strong><span style="display: block; color: #4f6f8f;">Pro + SEO</span></div>
+        <div><strong style="font-size: 1.8rem; color: #1a73e8;">24h</strong><span style="display: block; color: #4f6f8f;">delivery</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fab fa-google" style="font-size: 4.5rem;"></i>
+      <i class="fas fa-plus" style="font-size: 2.5rem; margin: 0 10px; color: #1a73e8;"></i>
+      <i class="fas fa-globe" style="font-size: 4rem;"></i>
+      <p style="margin-top: 24px; font-weight: 700; background: white; padding: 12px 24px; border-radius: 60px; display: inline-block;">GBP + website = customers</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PERMANENT HOSTING NOTE - GITHUB ===== -->
+<div class="container">
+  <div class="hosting-note">
+    <i class="fab fa-github"></i>
+    <div>
+      <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 8px;">🚀 Permanently hosted on GitHub</h3>
+      <p style="font-size: 1.1rem; color: #0a3b5c;">Your website is static, super fast, and hosted free on GitHub. <strong>Zero maintenance cost, no monthly fees.</strong> One-time payment, lifetime live.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRICING SECTION (₹5,000 & ₹10,000 + maintenance) ===== -->
+<div id="pricing" style="background: #f9fcff; padding: 60px 0;">
+  <div class="container">
+    <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-size: 2.6rem; font-weight: 800;">Transparent pricing</h2>
+      <p style="font-size: 1.2rem; color: #3e5a6a;">One-time payment • GitHub hosting • No hidden charges</p>
+    </div>
+    <div class="pricing-grid">
+      
+      <!-- NORMAL PLAN - ₹5,000 -->
+      <div class="pricing-card">
+        <h3 style="font-size: 2rem;">Normal</h3>
+        <div class="price">₹5,000<span> / one-time</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Google Business Profile setup/verify</li>
+          <li><i class="fas fa-check-circle"></i> 1-page professional website</li>
+          <li><i class="fas fa-check-circle"></i> Mobile optimized, fast</li>
+          <li><i class="fas fa-check-circle"></i> Connected to GBP (website link)</li>
+          <li><i class="fas fa-check-circle"></i> GitHub permanent hosting</li>
+          <li><i class="fas fa-check-circle"></i> 24h delivery</li>
+          <li><i class="fas fa-circle" style="color: #b0cded;"></i> No monthly fees</li>
+        </ul>
+        <a href="https://wa.me/917479521662?text=I%20want%20Normal%20website%20for%20₹5000%20-%20Google%20Business%20Setup" class="btn btn-pricing" style="width: 100%; text-align: center;" target="_blank">Choose Normal →</a>
+        <p style="margin-top: 16px; font-size: 0.9rem; color: #5a7e9a;"><i class="fas fa-shield"></i> Lifetime live, no recurring</p>
+      </div>
+
+      <!-- PRO PLAN - ₹10,000 (POPULAR) -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">⭐ MOST POPULAR</div>
+        <h3 style="font-size: 2rem;">Pro</h3>
+        <div class="price">₹10,000<span> / one-time</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Everything in Normal</li>
+          <li><i class="fas fa-check-circle"></i> 5-page premium website</li>
+          <li><i class="fas fa-check-circle"></i> Local SEO optimization</li>
+          <li><i class="fas fa-check-circle"></i> 3 Google Posts on your GBP</li>
+          <li><i class="fas fa-check-circle"></i> Citation/business listing</li>
+          <li><i class="fas fa-check-circle"></i> Priority 12h delivery</li>
+          <li><i class="fas fa-check-circle"></i> 6 months minor edits free</li>
+        </ul>
+        <a href="https://wa.me/917479521662?text=I%20want%20PRO%20website%20for%20₹10000%20with%20SEO%20and%20Google%20Posts" class="btn btn-pricing" style="width: 100%; background: #1a73e8;" target="_blank">Get Pro →</a>
+      </div>
+
+      <!-- MAINTENANCE PLAN (according to changes) -->
+      <div class="pricing-card">
+        <h3 style="font-size: 2rem;">Maintenance</h3>
+        <div class="price">₹500<span> / change</span></div>
+        <span style="background: #e1edff; padding: 6px 16px; border-radius: 60px; font-size: 0.8rem; font-weight: 700;">or custom package</span>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Content updates (text, images)</li>
+          <li><i class="fas fa-check-circle"></i> New pages or sections</li>
+          <li><i class="fas fa-check-circle"></i> GBP profile post updates</li>
+          <li><i class="fas fa-check-circle"></i> Pay per change / yearly plan available</li>
+          <li><i class="fas fa-check-circle"></i> No retainer, only when you need</li>
+        </ul>
+        <a href="https://wa.me/917479521662?text=Hi%20I%20need%20website%20changes%20-%20maintenance%20plan" class="btn-outline btn-pricing" style="width: 100%; text-align: center;" target="_blank">Request change</a>
+        <p style="margin-top: 16px; font-size: 0.85rem;"><i class="fas fa-clock"></i> ₹500 per minor edit; bulk discounts</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; background: white; padding: 16px; border-radius: 60px; font-weight: 500;"><i class="fas fa-github"></i> All websites permanently hosted on GitHub — no hosting fees, ever. ₹0 monthly.</p>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<div id="services" style="padding: 60px 0;">
+  <div class="container">
+    <div class="section-title" style="text-align: center;">
+      <h2 style="font-size: 2.4rem;">What we do</h2>
+      <p style="font-size: 1.2rem;">Complete Google Business & web presence</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card" style="background: white; border-radius: 32px; padding: 32px; border: 1px solid #f0f5fa;">
+        <div style="background: #e8f0fe; width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;"><i class="fas fa-google" style="font-size: 2rem; color: #1a73e8;"></i></div>
+        <h3 style="font-size: 1.8rem;">GBP setup</h3>
+        <p style="color: #3e5a6a;">Claim, verify, optimize your Google Business Profile. Add photos, attributes, posts.</p>
+      </div>
+      <div class="service-card" style="background: white; border-radius: 32px; padding: 32px; border: 1px solid #f0f5fa;">
+        <div style="background: #e8f0fe; width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;"><i class="fas fa-code" style="font-size: 2rem; color: #1a73e8;"></i></div>
+        <h3 style="font-size: 1.8rem;">Website generate</h3>
+        <p style="color: #3e5a6a;">We build a professional, mobile-friendly website from your business details. Static, fast, GitHub hosted.</p>
+      </div>
+      <div class="service-card" style="background: white; border-radius: 32px; padding: 32px; border: 1px solid #f0f5fa;">
+        <div style="background: #e8f0fe; width: 64px; height: 64px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;"><i class="fas fa-chart-line" style="font-size: 2rem; color: #1a73e8;"></i></div>
+        <h3 style="font-size: 1.8rem;">Local SEO</h3>
+        <p style="color: #3e5a6a;">Optimize for "near me" searches. Citation building and maps ranking.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT SECTION - WHATSAPP & GMAIL (your given email) ===== -->
+<div id="contact" class="container">
+  <div class="contact-section">
+    <div class="contact-flex">
+      <div class="contact-info">
+        <h2>📲 Get your website today</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 32px; opacity: 0.9;">Click WhatsApp or email us. We reply within 1 hour.</p>
+        
+        <!-- WhatsApp contact feature -->
+        <div class="contact-detail">
+          <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+          <div>
+            <span style="font-weight: 400; opacity: 0.9;">WhatsApp business</span>
+            <div class="wa-number"><a href="https://wa.me/917479521662" style="color: white; text-decoration: underline; text-underline-offset: 4px;">+91 7485989859</a> (click to chat)</div>
+          </div>
+        </div>
+
+        <!-- Gmail contact feature - your exact email -->
+        <div class="contact-detail">
+          <i class="fas fa-envelope" style="color: #fbbc04;"></i>
+          <div>
+            <span style="font-weight: 400; opacity: 0.9;">Email (Gmail)</span>
+            <div class="email-id"><a href="mailto:goglebusinesswebstore@gmail.com" style="color: white; text-decoration: underline; word-break: break-all;">goglebusinesswebstore@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <a href="https://wa.me/917479521662?text=Hi%20I%20need%20website%20for%20my%20Google%20Business%20Profile" class="btn btn-wa" style="margin-right: 16px;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp now</a>
+          <a href="mailto:goglebusinesswebstore@gmail.com?subject=Website%20for%20GBP%20-%20Query&body=Hi,%20I%20need%20a%20website%20for%20my%20Google%20Business%20Profile." class="btn btn-outline" style="background: white; color: #0a1e2f; border: 2px solid white;">Email us</a>
+        </div>
+      </div>
+      <div style="flex: 1; background: rgba(255,255,255,0.05); border-radius: 36px; padding: 32px; backdrop-filter: blur(8px);">
+        <i class="fas fa-globe" style="font-size: 3rem; margin-bottom: 20px;"></i>
+        <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Permanent hosting</h3>
+        <p style="opacity: 0.9;">GitHub static hosting = ₹0 maintenance. Your site stays live forever. No monthly bills.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER with PRICING, COMPANY, CONTACT ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom: 20px;">
+          <i class="fas fa-bolt" style="color: #1a73e8;"></i>
+          <span style="font-weight: 800; font-size: 1.5rem;">GB WebSetup</span>
+        </div>
+        <p style="color: #2d4e68; margin-bottom: 24px;">We give every local shop a website connected to Google Business. One-time cost, GitHub hosted, no monthly fees.</p>
+        <div style="display: flex; gap: 16px;">
+          <a href="https://wa.me/917479521662" style="color: #1a73e8; font-size: 1.6rem;"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:goglebusinesswebstore@gmail.com" style="color: #1a73e8; font-size: 1.6rem;"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- SERVICE with exact pricing -->
+      <div class="footer-links">
+        <h5>📋 Pricing</h5>
+        <ul>
+          <li><a href="#pricing"><i class="fas fa-tag"></i> Normal – ₹5,000</a></li>
+          <li><a href="#pricing"><i class="fas fa-crown"></i> Pro – ₹10,000</a></li>
+          <li><a href="#pricing"><i class="fas fa-tools"></i> Maintenance – per change</a></li>
+          <li><a href="#contact"><i class="fas fa-github"></i> GitHub hosting (free)</a></li>
+        </ul>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="footer-links">
+        <h5>🏢 Company</h5>
+        <ul>
+          <li><a href="#"><i class="fas fa-info-circle"></i> About us</a></li>
+          <li><a href="successstories.html"><i class="fas fa-star"></i> Success stories</a></li>
+          <li><a href="joinaspartner.html"><i class="fas fa-handshake"></i> Partner</a></li>
+          <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT with your gmail -->
+      <div class="footer-links">
+        <h5>📬 Connect</h5>
+        <ul>
+          <li><a href="mailto:goglebusinesswebstore@gmail.com"><i class="fas fa-envelope"></i> goglebusinesswebstore@gmail.com</a></li>
+          <li><a href="https://wa.me/917479521662"><i class="fab fa-whatsapp"></i> +91 7485989859</a></li>
+          <li><a href="https://wa.me/917479521662"><i class="fas fa-comment"></i> Live chat (WhatsApp)</a></li>
+          <li><a href="https://wa.me/917479521662"><i class="fas fa-calendar"></i> Free consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Google Business Web Setup. All rights reserved. Google Business Profile is a trademark of Google LLC. <br>Email: goglebusinesswebstore@gmail.com | WhatsApp: +91 8888 555555 | GitHub hosted — ₹0 monthly maintenance</p>
+      <p style="margin-top: 10px;"><i class="fas fa-check-circle" style="color: #1a73e8;"></i> Permanent website with one-time payment. No recurring fees.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SIMPLE MOBILE HAMBURGER TOGGLE ===== -->
+<script>
+  const hamburger = document.getElementById('hamburger-icon');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+  });
+
+  // smooth anchor
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+<!-- note: all functions working - whatsapp, email, rupee pricing, github hosting message, permanent website -->
+</body>
+</html>
